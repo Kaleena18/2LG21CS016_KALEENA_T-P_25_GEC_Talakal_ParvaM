@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Generator</title>
+    <style>
+        .shape-container {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left:600px ;
+        }
+        .shape {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="color: blue;">Shape Generator</h2>
+
+    <div><label for="shape">Choose a shape:</label></div>
+    <select id="shape">
+        <option value="rectangle">Rectangle</option>
+        <option value="square">Square</option>
+        <option value="circle">Circle</option>
+        <option value="triangle">Triangle</option>
+    </select>
+
+    <br><br>
+
+    <label for="width">Width:</label>
+   <input type="number" id="width" placeholder="Enter width">
+   
+    <br><br> 
+    
+    <label for="height">Height:</label>
+    <input type="number" id="height" placeholder="Enter height">
+
+    <br><br>
+
+    <button onclick="getResult()">Submit</button>
+
+    <div id="shape-container"></div>
+
+    <script>
+        function getResult() {
+            const shapeType = document.getElementById("shape").value;
+            const width = document.getElementById("width").value;
+            const height = document.getElementById("height").value;
+            const container = document.getElementById("shape-container");
+
+            container.innerHTML = "";
+
+            let shape = document.createElement("div");
+            shape.classList.add("shape");
+
+            if (shapeType === "rectangle") {
+                shape.style.width = width + "px";
+                shape.style.height = height + "px";
+                shape.style.backgroundColor = "blue";
+            } 
+            else if (shapeType === "square") {
+                shape.style.width = width + "px";
+                shape.style.height = width + "px";  // Square has equal width & height
+                shape.style.backgroundColor = "red";
+            } 
+            else if (shapeType === "circle") {
+                shape.style.width = width + "px";
+                shape.style.height = width + "px"; // Circle needs equal width & height
+                shape.style.borderRadius = "50%";
+                shape.style.backgroundColor = "black";
+            } 
+            else if (shapeType === "triangle") {
+                shape.style.width = "0";
+                shape.style.height = "0";
+                shape.style.borderLeft = width / 2 + "px solid transparent";
+                shape.style.borderRight = width / 2 + "px solid transparent";
+                shape.style.borderBottom = height + "px solid pink";
+            }
+
+            container.appendChild(shape);
+        }
+    </script>
+
+</body>
+</html>
