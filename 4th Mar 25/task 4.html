@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+    <div>
+        <label for="txt1">Value 1</label>
+        <input type="text" id="val1" placeholder="Enter first value ">
+    </div>
+    <br>
+    <div>
+        <label for="txt2">Value 2</label>
+        <input type="text" id="val2" placeholder="Enter second value ">
+    </div>
+    <br>
+    <div>
+        <button onclick="getResult()">Result</button>
+    </div>
+    <br>
+
+    <div id="result"></div>
+
+    <script>
+        function getResult() {
+            var val1 = document.getElementById('val1').value;
+            var val2 = document.getElementById('val2').value;
+            var result;
+            
+            if (!isNaN(val1) && !isNaN(val2) && val1 !== "" && val2 !== "") {
+                let a = parseFloat(val1);
+                let b = parseFloat(val2);
+
+                let resulta = a + b;
+                let results = a - b;
+                let resultm = a * b;
+                let resultd = a / b;
+                let resultmod = a % b;
+                let resultinc = a + 1;
+                let resultdec = a - 1;
+                let resultexe = a ** b;
+                let lhs = a ** 2 - b ** 2;
+                let rhs = (a + b) * (a - b);
+
+                result = `
+    <table>
+        <tr style="height: 40px;">
+            <th>x</th>
+            <th>y</th>
+            <th>Op</th>
+            <th>Exp</th>
+            <th>Result</th>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>+</td>
+            <td>${a} + ${b}</td>
+            <td>${resulta}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>-</td>
+            <td>${a} - ${b}</td>
+            <td>${results}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>*</td>
+            <td>${a} * ${b}</td>
+            <td>${resultm}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>/</td>
+            <td>${a} / ${b}</td>
+            <td>${resultd}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>%</td>
+            <td>${a} % ${b}</td>
+            <td>${resultmod}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>++</td>
+            <td>${a}++</td>
+            <td>${resultinc}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>--</td>
+            <td>${a}--</td>
+            <td>${resultdec}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>**</td>
+            <td>${a} ** ${b}</td>
+            <td>${resultexe}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>a² - b²</td>
+            <td>${a}² - ${b}²</td>
+            <td>${lhs}</td>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${a}</td>
+            <td>${b}</td>
+            <td>(a + b)(a - b)</td>
+            <td>(${a} + ${b})(${a} - ${b})</td>
+            <td>${rhs}</td>
+        </tr>
+    </table>
+    `;
+
+            } else {
+                let resultCancat = val1 + val2;
+                let CancatArray = resultCancat.split('');
+                let reverseArray = CancatArray.reverse();
+                let reverseString = reverseArray.join('');
+                result = `
+               <table>
+        <tr style="height: 40px;">
+            <th>x</th>
+            <th>y</th>
+            <th>Concat</th>
+            <th>Length</th>
+            <th>Reverse</th>
+        </tr>
+        <tr style="height: 40px;">
+            <td>${val1}</td>
+            <td>${val2}</td>
+            <td>${resultCancat}</td>
+            <td>${resultCancat.length}</td>
+            <td>${reverseString}</td>
+        </tr>
+    </table>`
+            }
+            
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

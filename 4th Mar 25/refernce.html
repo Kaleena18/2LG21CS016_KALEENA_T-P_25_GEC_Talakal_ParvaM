@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Table Example</title>
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+    <div>
+        <label for="val1">Value 1</label>
+        <input type="text" id="val1" name="val1" placeholder="Enter number">
+    </div>
+    <div>
+        <label for="val2">Value 2</label>
+        <input type="text" id="val2" name="val2" placeholder="Enter number">
+    </div>
+    <div><button onclick="getResult()">Submit</button></div>
+
+    <div id="flnumber"></div>
+
+    <script>
+        function getResult() {
+            var val1 = document.getElementById('val1').value;
+            var val2 = document.getElementById('val2').value;
+            var result;
+
+            if (!isNaN(val1) && !isNaN(val2) && val1 !== "" && val2 !== "") {
+                let num1 = parseFloat(val1);
+                let num2 = parseFloat(val2);
+
+                let resulta = num1 + num2;
+                let results = num1 - num2;
+                let resultm = num1 * num2;
+                let resultd = num1 / num2;
+                let resultmod = num1 % num2;
+                let resultinc = num1 + 1; // Corrected increment
+                let resultdec = num2 - 1; // Corrected decrement
+                let resultexp = num1 ** num2;
+
+                result = `
+                    <table>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>OP</th>
+                            <th>EXP</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr>
+                            <td>${num1}</td>
+                            <td>${num2}</td>
+                            <td>+</td>
+                            <td>${num1} + ${num2}</td>
+                            <td>${resulta}</td>
+                        </tr>
+                        <tr>
+                            <td>${num1}</td>
+                            <td>${num2}</td>
+                            <td>-</td>
+                            <td>${num1} - ${num2}</td>
+                            <td>${results}</td>
+                        </tr>
+                        <tr>
+                            <td>${num1}</td>
+                            <td>${num2}</td>
+                            <td>*</td>
+                            <td>${num1} * ${num2}</td>
+                            <td>${resultm}</td>
+                        </tr>
+                        <tr>
+                            <td>${num1}</td>
+                            <td>${num2}</td>
+                            <td>/</td>
+                            <td>${num1} / ${num2}</td>
+                            <td>${resultd}</td>
+                        </tr>
+                        <tr>
+                            <td>${num1}</td>
+                            <td>${num2}</td>
+                            <td>%</td>
+                            <td>${num1} % ${num2}</td>
+                            <td>${resultmod}</td>
+                        </tr>
+                        <tr>
+                             <td>${num1}</td>
+                             <td></td>
+                             <td>++</td>
+                             <td>${num1} + 1</td>
+                             <td>${resultinc}</td>
+                        </tr>
+                        <tr>
+                             <td></td>
+                             <td>${num2}</td>
+                             <td>--</td>
+                             <td>${num2} - 1</td>
+                             <td>${resultdec}</td>
+                        </tr>
+                        <tr>
+                            <td>${num1}</td>
+                            <td>${num2}</td>
+                            <td>**</td>
+                            <td>${num1} ** ${num2}</td>
+                            <td>${resultexp}</td>
+                        </tr>
+                    </table>
+                `;
+            } else {
+                result = "Please enter valid numbers.";
+            }
+
+            document.getElementById('flnumber').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
