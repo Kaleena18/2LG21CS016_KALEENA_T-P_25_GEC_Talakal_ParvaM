@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Registration</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div th:replace="fragment/nav :: nav"></div>
+    <div class="container d-flex justify-content-center align-items-center" "width:100px;" style="height: 100vh;">
+        <div class="w-50">
+            <h1 class="mt-5 text-center">Player Registration</h1>
+            <form th:action="@{/kali/save}" th:object="${Playerregistration}" method="post" class="mt-3" >
+                <div class="form-group">
+                    <label for="playerregistrationName">Name</label>
+                    <input type="text" class="form-control" id="playerregistrationName" th:field="*{name}" placeholder="Enter playerregistration name">
+                </div>  
+                <div class="form-group">
+                    <label for="playerregistrationDob">DOB</label>
+                    <input type="date" class="form-control" id="playerregistrationdob" th:field="*{dob}" placeholder="Enter playerregistration dob">
+                </div>
+                
+                <div class="form-group">
+                    <label for="playerregistrationEmail">Email</label>
+                    <input type="email" class="form-control" id="playerregistrationEmail" th:field="*{email}" placeholder="Enter playerregistration email">
+                </div>
+                <div class="form-group">
+                    <label for="playerregistrationPhone">Phone</label>
+                    <input type="number" class="form-control" id="playerregistrationphone" th:field="*{phone}" placeholder="Enter playerregistration phone">
+                </div>
+              
+                <div class="form-group">
+                    <label for="playerregistrationEpicno">Epicno</label>
+                    <input type="number" class="form-control" id="playerregistrationepicno" th:field="*{epicno}" placeholder="Enter playerregistration epicno">
+                </div>
+                <div class="form-group">
+                    <label for="playerregistrationadress">Adress</label>
+                    <input type="text" class="form-control" id="playerregistrationadress" th:field="*{adress}" placeholder="Enter playerregistration adress">
+                </div>
+                <div class="form-group">
+                    <label for="profilepic">Profilepic</label>
+                    <input type="file" class="form-control" id="playerregistrationprofilepic" th:field="*{profilepic}" placeholder="Enter playerregistration profilepic">
+                </div>
+                <div class="form-group">
+                    <label for="epicimage">Epicimage</label>
+                    <input type="file" class="form-control" id="playerregistrationepicimage" th:field="*{epicimage}" placeholder="Enter playerregistration epicimage">
+                </div>
+                <div class="form-group">
+                    <label for="playertype">Playertype</label>
+                    <input type="file" class="form-control" id="playerregistrationplayertype" th:field="*{playertype}" placeholder="Enter playerregistration playertype">
+                </div>
+                <div class="form-group">
+                    <label for="battingtype">Battingtype</label>
+                    <input type="file" class="form-control" id="playerregistrationbattingtype" th:field="*{battingtype}" placeholder="Enter playerregistration battingtype">
+                </div>
+                <div class="form-group">
+                    <label for="bowlingtype">Bowlingtype</label>
+                    <input type="file" class="form-control" id="playerregistrationbowlingtype" th:field="*{bowlingtype}" placeholder="Enter playerregistration bowlingtype">
+                </div>
+                
+                
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

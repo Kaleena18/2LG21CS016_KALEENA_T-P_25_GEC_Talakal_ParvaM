@@ -1,0 +1,61 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   IPL Admin Login
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+       background-image: url('assets\images\history\background\admin.png');
+       
+     }
+   </style>
+ </head>
+ <body class="bg-gray-100 min-h-screen flex flex-col">
+    
+
+  <main class="flex-grow flex items-center justify-center px-4 py-12">
+   <form autocomplete="off" class="bg-white rounded-lg shadow-md p-8 w-full max-w-md" id="loginForm">
+    <h2 class="text-center text-gray-900 font-bold text-xl mb-6">
+     Admin Login
+    </h2>
+    <label class="block text-gray-900 font-semibold mb-1" for="username">
+     Username
+     <span class="text-red-600">
+      *
+     </span>
+    </label>
+    <input class="w-full border border-gray-300 rounded-md px-3 py-2 mb-5 text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent" id="username" name="username" placeholder="Enter username" required="" type="text"/>
+    <label class="block text-gray-900 font-semibold mb-1" for="password">
+     Password
+     <span class="text-red-600">
+      *
+     </span>
+    </label>
+    <input class="w-full border border-gray-300 rounded-md px-3 py-2 mb-6 text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent" id="password" name="password" placeholder="Enter password" required="" type="password"/>
+    <label class="block text-gray-900 font-semibold mb-1" for="Email">
+     Email
+     <span class="text-red-600">
+        *
+     </span>
+    </label>
+    <input class="w-full border border-gray-300 rounded-md px-3 py-2 mb-5 text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent" id="Email" name="Email" placeholder="Email" required="" type="text"/>
+    <button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-md transition-colors" type="submit">
+     Login
+    </button>
+   </form>
+  </main>
+  <script>
+   document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // You can add validation or authentication here if needed
+    // For now, just redirect to dashboard.html
+    window.location.href = 'dashboard.html';
+   });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,341 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   IPL Player Registration
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+ </head>
+ 
+    
+    </div>
+
+    <button aria-label="Toggle menu" class="md:hidden text-white focus:outline-none" id="menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <nav class="md:hidden bg-red-600 text-white px-4 py-3 space-y-2 hidden" id="mobile-menu">
+    <a class="block hover:underline" href="#">
+     Home
+    </a>
+    <a class="block hover:underline" href="#">
+     Teams
+    </a>
+    <a class="block hover:underline" href="#">
+     Players
+    </a>
+    <a class="block hover:underline" href="#">
+     Schedule
+    </a>
+    <a class="block hover:underline" href="#">
+     Contact
+    </a>
+   </nav>
+  </header>
+  <main class="flex-grow container mx-auto px-4 py-10 max-w-3xl">
+   <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+    Player Registration Form
+   </h2>
+   <form class="bg-white shadow-md rounded-lg p-8 space-y-6" id="registrationForm" novalidate="">
+    <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="profilePicture">
+       Profile Picture
+       <span class="text-red-600">
+        *
+       </span>
+      </label>
+      <input accept="image/*" class="w-full text-gray-700" id="profilePicture" name="profilePicture" required="" type="file"/>
+      <p class="text-red-600 text-sm mt-1 hidden" id="profilePictureError">
+       Please upload a profile picture.
+      </p>
+     </div>
+    <div>
+     <label class="block text-gray-700 font-semibold mb-2" for="fullName">
+      Full Name
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" id="fullName" name="fullName" placeholder="Enter full name" required="" type="text"/>
+     <p class="text-red-600 text-sm mt-1 hidden" id="fullNameError">
+      Please enter your full name.
+     </p>
+    </div>
+    
+    <div>
+     <label class="block text-gray-700 font-semibold mb-2" for="age">
+      Age
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" id="age" max="50" min="15" name="age" placeholder="Enter age (15-50)" required="" type="number"/>
+     <p class="text-red-600 text-sm mt-1 hidden" id="ageError">
+      Please enter a valid age between 15 and 50.
+     </p>
+    </div>
+    <div>
+     <label class="block text-gray-700 font-semibold mb-2" for="team">
+      Select Team
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <select class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-red-500" id="team" name="team" required="">
+      <option disabled="" selected="" value="">
+       Select your team
+      </option>
+      <option value="Chennai Super Kings">
+       Chennai Super Kings
+      </option>
+      <option value="Mumbai Indians">
+       Mumbai Indians
+      </option>
+      <option value="Royal Challengers Bangalore">
+       Royal Challengers Bangalore
+      </option>
+      <option value="Kolkata Knight Riders">
+       Kolkata Knight Riders
+      </option>
+      <option value="Delhi Capitals">
+       Delhi Capitals
+      </option>
+      <option value="Sunrisers Hyderabad">
+       Sunrisers Hyderabad
+      </option>
+      <option value="Punjab Kings">
+       Punjab Kings
+      </option>
+      <option value="Rajasthan Royals">
+       Rajasthan Royals
+      </option>
+      <option value="Lucknow Super Giants">
+       Lucknow Super Giants
+      </option>
+      <option value="Gujarat Titans">
+       Gujarat Titans
+      </option>
+     </select>
+     <p class="text-red-600 text-sm mt-1 hidden" id="teamError">
+      Please select a team.
+     </p>
+    </div>
+    <div>
+     <label class="block text-gray-700 font-semibold mb-2" for="role">
+      Player Role
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <div class="flex flex-wrap gap-4">
+      <label class="inline-flex items-center">
+       <input class="form-radio text-red-600" name="role" required="" type="radio" value="Batsman"/>
+       <span class="ml-2 text-gray-700">
+        Batsman
+       </span>
+      </label>
+      <label class="inline-flex items-center">
+       <input class="form-radio text-red-600" name="role" type="radio" value="Bowler"/>
+       <span class="ml-2 text-gray-700">
+        Bowler
+       </span>
+      </label>
+      <label class="inline-flex items-center">
+       <input class="form-radio text-red-600" name="role" type="radio" value="All-rounder"/>
+       <span class="ml-2 text-gray-700">
+        All-rounder
+       </span>
+      </label>
+      <label class="inline-flex items-center">
+       <input class="form-radio text-red-600" name="role" type="radio" value="Wicket-keeper"/>
+       <span class="ml-2 text-gray-700">
+        Wicket-keeper
+       </span>
+      </label>
+     </div>
+     <p class="text-red-600 text-sm mt-1 hidden" id="roleError">
+      Please select a player role.
+     </p>
+    </div>
+    <div>
+     <label class="block text-gray-700 font-semibold mb-2" for="contactNumber">
+      Contact Number
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" id="contactNumber" name="contactNumber" pattern="^\d{10}$" placeholder="Enter 10-digit contact number" required="" type="tel"/>
+     <p class="text-red-600 text-sm mt-1 hidden" id="contactNumberError">
+      Please enter a valid 10-digit contact number.
+     </p>
+    </div>
+    <div>
+     <label class="block text-gray-700 font-semibold mb-2" for="email">
+      Email Address
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" id="email" name="email" placeholder="Enter email address" required="" type="email"/>
+     <p class="text-red-600 text-sm mt-1 hidden" id="emailError">
+      Please enter a valid email address.
+     </p>
+    </div>
+    <div>
+     <label class="block text-gray-700 font-semibold mb-2" for="profilePicture">
+      Id Proof
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <input accept="image/*" class="w-full text-gray-700" id="profilePicture" name="profilePicture" required="" type="file"/>
+     <p class="text-red-600 text-sm mt-1 hidden" id="profilePictureError">
+      Please upload a Player Id Proof.
+     </p>
+    </div>
+    <div>
+     <label class="block text-gray-700 font-semibold mb-2" for="bio">
+      Short Bio
+     </label>
+     <textarea class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 resize-none" id="bio" name="bio" placeholder="Tell us a little about yourself" rows="4"></textarea>
+    </div>
+    <button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-md transition-colors duration-300" type="submit">
+     Register Player
+    </button>
+   </form>
+   <section class="hidden mt-8 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded" id="successMessage" role="alert">
+    <p class="font-semibold">
+     Registration Successful!
+    </p>
+    <p>
+     Thank you for registering as an IPL player.
+    </p>
+   </section>
+  </main>
+  <footer class="bg-gray-800 text-gray-300 py-6 mt-12">
+   <div class="container mx-auto px-4 text-center text-sm">
+    © 2024 Indian Premier League. All rights reserved.
+   </div>
+  </footer>
+  <script>
+   const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    const form = document.getElementById('registrationForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Clear previous errors
+      const errorFields = [
+        'fullNameError',
+        'ageError',
+        'teamError',
+        'roleError',
+        'contactNumberError',
+        'emailError',
+        'profilePictureError',
+      ];
+      errorFields.forEach((id) => {
+        document.getElementById(id).classList.add('hidden');
+      });
+
+      let valid = true;
+
+      // Full Name validation
+      const fullName = form.fullName.value.trim();
+      if (fullName.length === 0) {
+        document.getElementById('fullNameError').classList.remove('hidden');
+        valid = false;
+      }
+
+      // Age validation
+      const age = parseInt(form.age.value, 10);
+      if (isNaN(age) || age < 15 || age > 50) {
+        document.getElementById('ageError').classList.remove('hidden');
+        valid = false;
+      }
+
+      // Team validation
+      const team = form.team.value;
+      if (!team) {
+        document.getElementById('teamError').classList.remove('hidden');
+        valid = false;
+      }
+
+      // Role validation
+      const role = form.role.value;
+      if (!role) {
+        document.getElementById('roleError').classList.remove('hidden');
+        valid = false;
+      }
+
+      // Contact Number validation
+      const contactNumber = form.contactNumber.value.trim();
+      const contactPattern = /^\d{10}$/;
+      if (!contactPattern.test(contactNumber)) {
+        document.getElementById('contactNumberError').classList.remove('hidden');
+        valid = false;
+      }
+
+      // Email validation
+      const email = form.email.value.trim();
+      const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById('emailError').classList.remove('hidden');
+        valid = false;
+      }
+
+      // Profile Picture validation
+      const profilePicture = form.profilePicture.files[0];
+      if (!profilePicture) {
+        document.getElementById('profilePictureError').classList.remove('hidden');
+        valid = false;
+      } else {
+        // Optional: check file type and size (max 5MB)
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        if (!allowedTypes.includes(profilePicture.type)) {
+          document.getElementById('profilePictureError').textContent =
+            'Only JPG, PNG, GIF, and WEBP images are allowed.';
+          document.getElementById('profilePictureError').classList.remove('hidden');
+          valid = false;
+        } else if (profilePicture.size > 5 * 1024 * 1024) {
+          document.getElementById('profilePictureError').textContent =
+            'Image size must be less than 5MB.';
+          document.getElementById('profilePictureError').classList.remove('hidden');
+          valid = false;
+        } else {
+          // Reset error text if previously changed
+          document.getElementById('profilePictureError').textContent =
+            'Please upload a profile picture.';
+        }
+      }
+
+      if (valid) {
+        // Here you can handle the form data, e.g., send to server
+        form.reset();
+        successMessage.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        successMessage.classList.add('hidden');
+      }
+    });
+  </script>
+ </body>
+</html>

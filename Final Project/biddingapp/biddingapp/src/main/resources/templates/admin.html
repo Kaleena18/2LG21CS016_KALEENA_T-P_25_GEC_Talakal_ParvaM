@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IPL Admin Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Make body height larger to enable scrolling */
+    body, html {
+      height: 200vh; /* 200% viewport height to allow vertical scroll */
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="relative bg-gray-100">
+  <!-- Full background image fixed so it stays while scrolling -->
+  <img
+    alt="Full background image showing abstract colorful shapes behind the admin login form"
+    class="fixed inset-0 w-full h-full object-cover -z-10"
+    src="assets\images\background images\admin.png"
+  />
+  <div class="flex items-center justify-center min-h-screen pt-20 pb-20">
+    <form class="bg-white bg-opacity-90 rounded-lg shadow-md p-8 w-full max-w-md relative z-10" novalidate>
+      <h2 class="text-center font-bold text-lg mb-6">Admin Login</h2>
+      <div class="mb-5">
+        <label for="username" class="block font-semibold mb-1">
+          Username <span class="text-red-600">*</span>
+        </label>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          placeholder="Enter username"
+          class="w-full border border-gray-300 rounded-md px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label for="password" class="block font-semibold mb-1">
+          Password <span class="text-red-600">*</span>
+        </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Enter password"
+          class="w-full border border-red-600 rounded-md px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-red-600 focus:border-red-600"
+          required
+        />
+      </div>
+      <div class="mb-6">
+        <label for="email" class="block font-semibold mb-1">
+          Email <span class="text-red-600">*</span>
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Email"
+          class="w-full border border-gray-300 rounded-md px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-red-700 hover:bg-red-800 text-white font-bold py-2 rounded-md transition-colors"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</body>
+</html>
